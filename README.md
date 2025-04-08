@@ -16,7 +16,17 @@ A React-based dashboard for analyzing Salesforce Commerce Cloud (SFCC) customer 
 ### Prerequisites
 
 - Node.js (v14 or higher)
+  - To check your Node version: `node --version`
+  - Download from: https://nodejs.org/
 - npm (v6 or higher)
+  - To check your npm version: `npm --version`
+  - npm comes with Node.js
+- Git installed on your machine
+  - To check your git version: `git --version`
+  - Download from: https://git-scm.com/downloads
+- GitHub account with repository access
+  - You should have received a collaboration invitation via email
+  - Accept the invitation before proceeding
 
 ### Installation
 
@@ -36,7 +46,67 @@ npm install
 npm start
 ```
 
-The application will be available at `http://localhost:3000`.
+The application will be available at:
+- Local: `http://localhost:3000`
+- Network: Look for the "On Your Network" URL in the terminal output
+
+### Troubleshooting Setup
+
+#### Common Issues and Solutions
+
+1. **Node Version Mismatch**
+   ```bash
+   # Check your Node version
+   node --version
+   
+   # If you need to update Node, visit:
+   # https://nodejs.org/
+   ```
+
+2. **Port 3000 Already in Use**
+   ```bash
+   # You can either:
+   # a) Stop the process using port 3000
+   # b) Use a different port:
+   PORT=3001 npm start
+   ```
+
+3. **npm Install Errors**
+   ```bash
+   # Try clearing npm cache
+   npm cache clean --force
+   
+   # Then remove node_modules and package-lock.json
+   rm -rf node_modules package-lock.json
+   
+   # Reinstall dependencies
+   npm install
+   ```
+
+4. **Git Authentication Issues**
+   - Ensure you've accepted the repository collaboration invitation
+   - Configure Git credentials:
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your.email@shopify.com"
+   ```
+
+#### Development Environment Setup
+
+1. **Recommended IDE**: Visual Studio Code
+   - Useful extensions:
+     - ESLint
+     - Prettier
+     - React Developer Tools
+     - GitHub Pull Requests
+
+2. **Chrome Extensions**
+   - React Developer Tools
+   - Redux DevTools (if using Redux)
+
+3. **Environment Variables**
+   - Copy `.env.example` to `.env` (if exists)
+   - Ask team members for any required API keys or credentials
 
 ## Usage
 
@@ -62,7 +132,14 @@ git checkout -b feature/your-feature-name
 git commit -m "feat: add new feature description"
 ```
 
-We follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages.
+We follow [Conventional Commits](https://www.conventionalcommits.org/) for commit messages:
+- `feat:` for new features
+- `fix:` for bug fixes
+- `docs:` for documentation changes
+- `style:` for formatting changes
+- `refactor:` for code refactoring
+- `test:` for adding tests
+- `chore:` for maintenance tasks
 
 3. Push your changes and create a Pull Request:
 ```bash
@@ -75,6 +152,13 @@ git push origin feature/your-feature-name
 - Use the Pull Request template when creating PRs
 - Include relevant test cases and documentation
 - Ensure all CI checks pass before requesting review
+
+### Branch Naming Convention
+
+- Features: `feature/description`
+- Bugs: `fix/description`
+- Documentation: `docs/description`
+- Refactoring: `refactor/description`
 
 ## Shopify Resources
 
